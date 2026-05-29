@@ -53,8 +53,7 @@
 
                     <hr>
                     <div class="text-center small text-muted">
-                        <strong>Demo Akun:</strong><br>
-                        admin / password &nbsp;|&nbsp; budi / password &nbsp;|&nbsp; manager / password
+                      Bunaya Ardik Saputra : 1224160039
                     </div>
                 </div>
             </div>
