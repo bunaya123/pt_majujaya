@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2026 at 06:57 AM
+-- Generation Time: May 29, 2026 at 04:58 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -41,11 +41,11 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `nama`, `alamat`, `telepon`, `created_at`, `updated_at`) VALUES
-(1, 'Toko Elektronik Maju', 'Jl. Sudirman No. 10, Jakarta', '021-5551234', '2026-05-28 11:28:28', '2026-05-28 11:28:28'),
-(2, 'CV Berkah Elektronik', 'Jl. Gatot Subroto No. 25, Bandung', '022-7778888', '2026-05-28 11:28:28', '2026-05-28 11:28:28'),
-(3, 'UD Sejahtera', 'Jl. Pemuda No. 5, Surabaya', '031-9991111', '2026-05-28 11:28:28', '2026-05-28 11:28:28'),
-(4, 'Toko Listrik Jaya', 'Jl. Diponegoro No. 15, Semarang', '024-4445555', '2026-05-28 11:28:28', '2026-05-28 11:28:28'),
-(5, 'PT Global Elektronik', 'Jl. Ahmad Yani No. 88, Yogyakarta', '0274-333222', '2026-05-28 11:28:28', '2026-05-28 11:28:28');
+(1, 'Fauzi Jengglot', 'Jl. Sudirman No. 10, Jakarta', '021-5551234', '2026-05-28 11:28:28', '2026-05-29 09:53:02'),
+(2, 'Fachrul Hannan Wily', 'Jl. Gatot Subroto No. 25, Bandung', '022-7778888', '2026-05-28 11:28:28', '2026-05-29 09:52:05'),
+(3, 'Reza Faurizki', 'Jl. Pemuda No. 5, Surabaya', '031-9991111', '2026-05-28 11:28:28', '2026-05-29 09:52:42'),
+(4, 'Rachman Maulana', 'Jl. Diponegoro No. 15, Semarang', '024-4445555', '2026-05-28 11:28:28', '2026-05-29 09:53:36'),
+(5, 'Louis Hasashi Halim', 'Jl. Ahmad Yani No. 88, Yogyakarta', '0274-333222', '2026-05-28 11:28:28', '2026-05-29 09:52:21');
 
 -- --------------------------------------------------------
 
@@ -70,10 +70,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `no_order`, `customer_id`, `user_id`, `total`, `status`, `catatan`, `created_at`, `updated_at`) VALUES
-(1, 'SO-20240101-001', 1, 2, '10500000.00', 'selesai', 'Pengiriman ke gudang', '2026-05-28 11:28:28', '2026-05-28 11:28:28'),
-(2, 'SO-20240102-002', 2, 3, '8500000.00', 'dikirim', NULL, '2026-05-28 11:28:28', '2026-05-28 11:28:28'),
-(3, 'SO-20240103-003', 3, 2, '3500000.00', 'draft', 'Tunggu konfirmasi', '2026-05-28 11:28:28', '2026-05-28 11:28:28'),
-(4, 'SO-20240104-004', 4, 3, '6900000.00', 'dibatalkan', 'Pelanggan membatalkan', '2026-05-28 11:28:28', '2026-05-28 11:28:28');
+(8, 'SO-20260529-001', 2, 1, '500000.00', 'draft', 'Mantap LUR Bsk Order Lagi yaa', '2026-05-29 09:56:21', '2026-05-29 09:56:21'),
+(9, 'SO-20260529-002', 1, 1, '1500000.00', 'draft', 'Jengglot Nya teranggg', '2026-05-29 09:56:57', '2026-05-29 09:56:57');
 
 -- --------------------------------------------------------
 
@@ -95,12 +93,8 @@ CREATE TABLE `order_details` (
 --
 
 INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `qty`, `harga`, `subtotal`) VALUES
-(1, 1, 1, 2, '3500000.00', '7000000.00'),
-(2, 1, 3, 1, '3500000.00', '3500000.00'),
-(3, 2, 6, 1, '8500000.00', '8500000.00'),
-(4, 3, 1, 1, '3500000.00', '3500000.00'),
-(5, 4, 4, 1, '2900000.00', '2900000.00'),
-(6, 4, 8, 1, '1900000.00', '1900000.00');
+(10, 8, 10, 1, '500000.00', '500000.00'),
+(11, 9, 1, 1, '1500000.00', '1500000.00');
 
 -- --------------------------------------------------------
 
@@ -123,14 +117,15 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `kode_produk`, `nama_produk`, `harga`, `stok`, `created_at`, `updated_at`) VALUES
-(1, 'PRD-001', 'TV LED Samsung 32\"', '3500000.00', 50, '2026-05-28 11:28:28', '2026-05-28 11:28:28'),
-(2, 'PRD-002', 'Kulkas Sharp 2 Pintu', '4200000.00', 30, '2026-05-28 11:28:28', '2026-05-28 11:28:28'),
-(3, 'PRD-003', 'AC Panasonic 1 PK', '3800000.00', 25, '2026-05-28 11:28:28', '2026-05-28 11:28:28'),
-(4, 'PRD-004', 'Mesin Cuci LG 7kg', '2900000.00', 40, '2026-05-28 11:28:28', '2026-05-28 11:28:28'),
-(5, 'PRD-005', 'Rice Cooker Miyako 1L', '350000.00', 100, '2026-05-28 11:28:28', '2026-05-28 11:28:28'),
-(6, 'PRD-006', 'Laptop Asus VivoBook', '8500000.00', 20, '2026-05-28 11:28:28', '2026-05-28 11:28:28'),
-(7, 'PRD-007', 'HP Xiaomi Redmi 12', '2100000.00', 60, '2026-05-28 11:28:28', '2026-05-28 11:28:28'),
-(8, 'PRD-008', 'Speaker Bluetooth JBL', '750000.00', 80, '2026-05-28 11:28:28', '2026-05-28 11:28:28');
+(1, 'PRD-001', 'Biled Aes Turbo', '1500000.00', 52, '2026-05-28 11:28:28', '2026-05-29 09:56:57'),
+(2, 'PRD-002', 'Master Rem Arm', '150000.00', 30, '2026-05-28 11:28:28', '2026-05-29 09:48:41'),
+(3, 'PRD-003', 'Standar 1 Chrome', '50000.00', 26, '2026-05-28 11:28:28', '2026-05-29 09:54:37'),
+(4, 'PRD-004', 'Shockbreaker KTC', '300000.00', 41, '2026-05-28 11:28:28', '2026-05-29 09:50:04'),
+(5, 'PRD-005', 'Biled CR 7', '400000.00', 100, '2026-05-28 11:28:28', '2026-05-29 09:51:11'),
+(6, 'PRD-006', 'Laptop Asus VivoBook', '8500000.00', 21, '2026-05-28 11:28:28', '2026-05-29 09:54:42'),
+(7, 'PRD-007', 'HP Xiaomi Redmi 12', '2100000.00', 60, '2026-05-28 11:28:28', '2026-05-29 09:54:56'),
+(8, 'PRD-008', 'Speaker Bluetooth JBL', '750000.00', 81, '2026-05-28 11:28:28', '2026-05-29 09:54:52'),
+(10, 'PRD-0010', 'Shockbreaker RCB', '500000.00', 4, '2026-05-29 09:46:26', '2026-05-29 09:56:21');
 
 -- --------------------------------------------------------
 
@@ -206,25 +201,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
